@@ -1,4 +1,4 @@
-"""完整一局验收：开始 → 3× → 设编成 → 周期推进 → 直到结算并截图。"""
+"""完整一局验收：开始 → 等开战 → 设编成 → 3× → 周期推进 → 直到结算并截图。"""
 import json
 from playwright.sync_api import sync_playwright
 
@@ -13,7 +13,7 @@ STATE = r"""
     west: units.filter(u => u.faction === 'west').length,
     shares: w.shares.map(s => Math.round(s * 1000) / 10),
     supply: Math.round(w.supply[0]),
-    endReason: w.endReason, winner: w.winner, stalemate: w.isStalemate ? w.isStalemate() : null,
+    endReason: w.endReason, winner: w.winner,
   };
 }
 """
@@ -30,14 +30,16 @@ with sync_playwright() as p:
     page.goto('http://127.0.0.1:8899/index.html', wait_until='load')
     page.wait_for_timeout(6000)
     page.mouse.click(640, 540)      # 开始作战
-    page.wait_for_timeout(1500)
+    page.wait_for_timeout(3000)
+    page.wait_for_timeout(13000)    # 等 12 秒布阵倒计时结束自动开战
+    print('battle?:', json.dumps(page.evaluate(STATE), ensure_ascii=False))
+    page.mouse.click(500, 606)      # 步兵 → 兵营持续出步兵
+    page.wait_for_timeout(400)
+    page.mouse.click(648, 554)      # 坦克（factory 行 2 列 1）→ 持续出坦克
+    page.wait_for_timeout(400)
     page.mouse.click(1237, 660)     # 3×
-    page.wait_for_timeout(800)
-    page.mouse.click(500, 606)      # 步兵 → 设为持续生产
-    page.wait_for_timeout(800)
 
-    for i in range(14):
-        # 交替推进方向，模拟玩家不断改指令
+    for i in range(16):
         page.mouse.click(700 + (i % 4) * 60, 260 + (i % 3) * 70)
         page.wait_for_timeout(5000)
         st = page.evaluate(STATE)
@@ -45,10 +47,9 @@ with sync_playwright() as p:
         if st.get('phase') == 'over':
             break
 
-    page.wait_for_timeout(2000)
-    final = page.evaluate(STATE)
-    print('final:', json.dumps(final, ensure_ascii=False))
-    page.screenshot(path=r'd:\Cocos游戏源码合集\风暴行动\tools\qg_final.png')
+    page.wait_for_timeout(2500)
+    print('final:', json.dumps(page.evaluate(STATE), ensure_ascii=False))
+    page.screenshot(path=r'd:\Cocos游戏源码合集\风暴行动\tools\qh_final.png')
     b.close()
 
 print('--- errors ---')

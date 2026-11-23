@@ -234,14 +234,18 @@ class FactionAI {
             want = 'assaultCar';
             producerType = 'factory';
         }
-        // 找能产出该兵种且空闲的产兵建筑
-        const producers = world.buildings.filter((b) => b.faction === me && !b.dead && b.def.produces.includes(want) && !b.produceType);
+        // 找能产出该兵种的建筑，设置持续生产偏好（建筑会自动连续产兵）
+        const producers = world.buildings.filter((b) => b.faction === me && !b.dead && b.def.produces.includes(want));
         if (producers.length === 0)
             return;
         const producer = (_a = producers.find((b) => b.def.id === producerType)) !== null && _a !== void 0 ? _a : producers[0];
-        if (!world.economy.canAfford(me, (_c = (_b = world.config.units[want]) === null || _b === void 0 ? void 0 : _b.cost) !== null && _c !== void 0 ? _c : 999))
-            return;
-        world.enqueue({ kind: 'queueUnit', faction: me, buildingId: producer.id, unitType: want });
+        if (producer.autoType !== want) {
+            world.enqueue({ kind: 'autoProduce', faction: me, buildingId: producer.id, unitType: want });
+        }
+        // 立刻补一队，避免开局空转
+        if (!producer.produceType && world.economy.canAfford(me, (_c = (_b = world.config.units[want]) === null || _b === void 0 ? void 0 : _b.cost) !== null && _c !== void 0 ? _c : 999)) {
+            world.enqueue({ kind: 'queueUnit', faction: me, buildingId: producer.id, unitType: want });
+        }
     }
     _maybeUseTactics(world) {
         const st = world.factionTacticState(this.faction);

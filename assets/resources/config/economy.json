@@ -1,6 +1,6 @@
 {
-  "supplyPerCell": 0.0035,
-  "mineMultiplier": 4,
+  "supplyPerCell": 0.0018,
+  "mineMultiplier": 5,
   "startSupply": 60,
   "armyCapPerCell": 3.0,
   "queueLength": 3,

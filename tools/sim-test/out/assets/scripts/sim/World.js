@@ -175,10 +175,28 @@ class World {
         if (count >= cap)
             return false;
         // 成本
-        if (!this.economy.spend(faction, def.cost))
-            return false;
         if (b.produceType)
             return false; // 已有一队在生产
+        if (!this.economy.spend(faction, def.cost))
+            return false;
+        b.produceType = unitType;
+        b.produceTicks = def.buildTicks;
+        return true;
+    }
+    /** 尝试让建筑开始生产某兵种（成本/上限校验，失败返回 false） */
+    _tryStartProduction(b, unitType) {
+        const def = this.config.units[unitType];
+        if (!def || !b.def.produces.includes(unitType))
+            return false;
+        if (b.produceType)
+            return false;
+        const owned = this.territory.counts[this._factionIdx[b.faction]];
+        const cap = this.economy.armyCap(owned);
+        const count = this.units.reduce((n, u) => n + (u.faction === b.faction && !u.dead ? 1 : 0), 0);
+        if (count >= cap)
+            return false;
+        if (!this.economy.spend(b.faction, def.cost))
+            return false;
         b.produceType = unitType;
         b.produceTicks = def.buildTicks;
         return true;
@@ -223,6 +241,12 @@ class World {
                 case 'queueUnit':
                     this.queueUnit(c.faction, c.buildingId, c.unitType);
                     break;
+                case 'autoProduce': {
+                    const b = this.buildings.find((bb) => bb.id === c.buildingId);
+                    if (b && !b.dead && b.faction === c.faction)
+                        b.autoType = c.unitType;
+                    break;
+                }
                 case 'build':
                     this.placeBuilding(c.faction, c.buildingType, c.x, c.z);
                     break;
@@ -339,6 +363,10 @@ class World {
                     }
                     b.produceType = null;
                 }
+            }
+            // 持续生产：建筑自动连续产兵（玩家只决定兵种编成）
+            if (!b.produceType && b.autoType && !b.dead) {
+                this._tryStartProduction(b, b.autoType);
             }
             // 防御开火
             const def = b.def.defense;

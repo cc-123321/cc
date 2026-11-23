@@ -9,6 +9,7 @@ function createBuilding(id, faction, def, x, z) {
         cooldown: 0,
         produceType: null,
         produceTicks: 0,
+        autoType: null,
         dead: false,
     };
 }
