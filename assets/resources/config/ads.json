@@ -1,0 +1,10 @@
+{
+  "bannedDuringBattle": true,
+  "slots": [
+    { "id": "doubleMerit", "type": "rewarded", "reward": 2, "perMatchLimit": 1, "perDayLimit": 3, "minIntervalMs": 30000 },
+    { "id": "revive", "type": "rewarded", "reward": 1, "perMatchLimit": 1, "perDayLimit": 3, "minIntervalMs": 30000 },
+    { "id": "speedUp", "type": "rewarded", "reward": 30, "perMatchLimit": 1, "perDayLimit": 6, "minIntervalMs": 30000 },
+    { "id": "supply", "type": "rewarded", "reward": 1, "perMatchLimit": 0, "perDayLimit": 2, "minIntervalMs": 60000 },
+    { "id": "interstitial", "type": "interstitial", "reward": 0, "perMatchLimit": 1, "perDayLimit": 6, "minIntervalMs": 90000 }
+  ]
+}

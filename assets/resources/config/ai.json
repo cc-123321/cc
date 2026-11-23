@@ -1,0 +1,16 @@
+{
+  "decideIntervalTicks": 45,
+  "coalitionThreshold": 0.55,
+  "grudgeDecay": 0.1,
+  "difficulty": 3,
+  "difficultyVisionMult": [0.75, 0.85, 1.0, 1.15, 1.3],
+  "difficultyDecideTicks": [90, 60, 45, 28, 18],
+  "weights": {
+    "expand": 1.0,
+    "defend": 0.85,
+    "raid": 0.65,
+    "contestMine": 0.95,
+    "revenge": 0.55,
+    "upgrade": 0.35
+  }
+}

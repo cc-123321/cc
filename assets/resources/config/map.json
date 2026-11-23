@@ -1,0 +1,43 @@
+{
+  "terrain": {
+    "size": 128,
+    "cellSize": 1.0,
+    "seed": 20261122,
+    "hillCount": 3,
+    "hillRadiusMin": 6,
+    "hillRadiusMax": 15,
+    "hillHeightMax": 3.2,
+    "riverCount": 1,
+    "riverWidth": 2.4,
+    "bridgeCount": 2,
+    "forestCount": 5,
+    "forestRadiusMin": 2,
+    "forestRadiusMax": 5,
+    "mineCount": 3,
+    "mineValue": 3,
+    "weather": [
+      "clear",
+      "clear",
+      "clear",
+      "sandstorm",
+      "fog"
+    ]
+  },
+  "spawns": {
+    "west": {
+      "x": 25,
+      "z": 41,
+      "name": "西方阵营"
+    },
+    "east": {
+      "x": 103,
+      "z": 41,
+      "name": "东方阵营"
+    },
+    "south": {
+      "x": 64,
+      "z": 109,
+      "name": "自由阵线"
+    }
+  }
+}

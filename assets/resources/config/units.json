@@ -1,0 +1,529 @@
+{
+  "infantry": {
+    "id": "infantry",
+    "name": "步兵班",
+    "domain": "ground",
+    "silhouette": "infantry",
+    "move": {
+      "speed": 0.11,
+      "turnRateDeg": 9,
+      "terrainSlow": {
+        "forest": 0.6,
+        "hill": 0.8,
+        "river": 0.5
+      },
+      "canEnterForest": true,
+      "canCrossBridgeOnly": false
+    },
+    "attack": {
+      "kind": "direct",
+      "damage": 5,
+      "range": 6,
+      "minRange": 0,
+      "reloadTicks": 28,
+      "splash": 0,
+      "canHitAir": true,
+      "canHitGround": true,
+      "armorMult": {
+        "front": 0.5,
+        "flank": 1.0,
+        "rear": 1.2
+      },
+      "accuracy": 0.62,
+      "requiresLineOfSight": true
+    },
+    "armor": {
+      "front": 2,
+      "flank": 2,
+      "rear": 2,
+      "hp": 30
+    },
+    "vision": 9,
+    "cost": 10,
+    "buildTicks": 24,
+    "tags": [
+      "capture",
+      "canShootAir"
+    ]
+  },
+  "exo": {
+    "id": "exo",
+    "name": "外骨骼步兵",
+    "domain": "ground",
+    "silhouette": "exo",
+    "move": {
+      "speed": 0.12,
+      "turnRateDeg": 7,
+      "terrainSlow": {
+        "forest": 0.7,
+        "hill": 0.85,
+        "river": 0.5
+      },
+      "canEnterForest": true,
+      "canCrossBridgeOnly": false
+    },
+    "attack": {
+      "kind": "direct",
+      "damage": 14,
+      "range": 5,
+      "minRange": 0,
+      "reloadTicks": 36,
+      "splash": 0,
+      "canHitAir": false,
+      "canHitGround": true,
+      "armorMult": {
+        "front": 0.7,
+        "flank": 1.0,
+        "rear": 1.2
+      },
+      "accuracy": 0.7,
+      "requiresLineOfSight": true
+    },
+    "armor": {
+      "front": 12,
+      "flank": 9,
+      "rear": 7,
+      "hp": 55
+    },
+    "vision": 7,
+    "cost": 24,
+    "buildTicks": 42,
+    "tags": [
+      "antiArmor",
+      "heavy"
+    ]
+  },
+  "artillery": {
+    "id": "artillery",
+    "name": "炮兵",
+    "domain": "ground",
+    "silhouette": "artillery",
+    "move": {
+      "speed": 0.06,
+      "turnRateDeg": 4,
+      "terrainSlow": {
+        "forest": 0.4,
+        "hill": 0.6,
+        "river": 0.2
+      },
+      "canEnterForest": false,
+      "canCrossBridgeOnly": true
+    },
+    "attack": {
+      "kind": "arc",
+      "damage": 22,
+      "range": 24,
+      "minRange": 7,
+      "reloadTicks": 90,
+      "splash": 2.6,
+      "canHitAir": false,
+      "canHitGround": true,
+      "armorMult": {
+        "front": 1.0,
+        "flank": 1.0,
+        "rear": 1.0
+      },
+      "accuracy": 0.55,
+      "requiresLineOfSight": false
+    },
+    "armor": {
+      "front": 5,
+      "flank": 5,
+      "rear": 5,
+      "hp": 34
+    },
+    "vision": 6,
+    "cost": 30,
+    "buildTicks": 55,
+    "tags": [
+      "splash",
+      "noArmor"
+    ]
+  },
+  "tank": {
+    "id": "tank",
+    "name": "主战坦克",
+    "domain": "ground",
+    "silhouette": "tank",
+    "move": {
+      "speed": 0.09,
+      "turnRateDeg": 3,
+      "terrainSlow": {
+        "forest": 0.35,
+        "hill": 0.7,
+        "river": 0.15
+      },
+      "canEnterForest": false,
+      "canCrossBridgeOnly": true
+    },
+    "attack": {
+      "kind": "direct",
+      "damage": 16,
+      "range": 11,
+      "minRange": 2,
+      "reloadTicks": 48,
+      "splash": 0,
+      "canHitAir": false,
+      "canHitGround": true,
+      "armorMult": {
+        "front": 1.2,
+        "flank": 1.5,
+        "rear": 1.8
+      },
+      "accuracy": 0.72,
+      "requiresLineOfSight": true
+    },
+    "armor": {
+      "front": 26,
+      "flank": 14,
+      "rear": 9,
+      "hp": 120
+    },
+    "vision": 10,
+    "cost": 42,
+    "buildTicks": 65,
+    "tags": [
+      "armorFront",
+      "armorFlankWeak"
+    ]
+  },
+  "assaultCar": {
+    "id": "assaultCar",
+    "name": "机动突击车",
+    "domain": "ground",
+    "silhouette": "assaultCar",
+    "move": {
+      "speed": 0.24,
+      "turnRateDeg": 8,
+      "terrainSlow": {
+        "forest": 0.3,
+        "hill": 0.7,
+        "river": 0.2
+      },
+      "canEnterForest": false,
+      "canCrossBridgeOnly": true
+    },
+    "attack": {
+      "kind": "direct",
+      "damage": 6,
+      "range": 7,
+      "minRange": 1,
+      "reloadTicks": 20,
+      "splash": 0,
+      "canHitAir": false,
+      "canHitGround": true,
+      "armorMult": {
+        "front": 0.8,
+        "flank": 1.1,
+        "rear": 1.4
+      },
+      "accuracy": 0.55,
+      "requiresLineOfSight": true
+    },
+    "armor": {
+      "front": 10,
+      "flank": 7,
+      "rear": 5,
+      "hp": 45
+    },
+    "vision": 9,
+    "cost": 26,
+    "buildTicks": 40,
+    "tags": [
+      "fast",
+      "mobility"
+    ]
+  },
+  "roboDog": {
+    "id": "roboDog",
+    "name": "机器狗",
+    "domain": "ground",
+    "silhouette": "roboDog",
+    "move": {
+      "speed": 0.14,
+      "turnRateDeg": 10,
+      "terrainSlow": {
+        "forest": 1.0,
+        "hill": 1.0,
+        "river": 0.6
+      },
+      "canEnterForest": true,
+      "canCrossBridgeOnly": false
+    },
+    "attack": {
+      "kind": "melee",
+      "damage": 7,
+      "range": 2.2,
+      "minRange": 0,
+      "reloadTicks": 18,
+      "splash": 0,
+      "canHitAir": false,
+      "canHitGround": true,
+      "armorMult": {
+        "front": 1.0,
+        "flank": 1.0,
+        "rear": 1.0
+      },
+      "accuracy": 0.85,
+      "requiresLineOfSight": false
+    },
+    "armor": {
+      "front": 6,
+      "flank": 6,
+      "rear": 6,
+      "hp": 26
+    },
+    "vision": 5,
+    "cost": 18,
+    "buildTicks": 30,
+    "tags": [
+      "sapper",
+      "fast",
+      "antiArtillery"
+    ]
+  },
+  "fighter": {
+    "id": "fighter",
+    "name": "战斗机",
+    "domain": "air",
+    "silhouette": "fighter",
+    "move": {
+      "speed": 0.55,
+      "turnRateDeg": 5,
+      "terrainSlow": {},
+      "canEnterForest": false,
+      "canCrossBridgeOnly": false
+    },
+    "attack": {
+      "kind": "direct",
+      "damage": 12,
+      "range": 14,
+      "minRange": 0,
+      "reloadTicks": 30,
+      "splash": 0,
+      "canHitAir": false,
+      "canHitGround": true,
+      "armorMult": {
+        "front": 1.0,
+        "flank": 1.0,
+        "rear": 1.0
+      },
+      "accuracy": 0.78,
+      "requiresLineOfSight": false
+    },
+    "armor": {
+      "front": 4,
+      "flank": 4,
+      "rear": 4,
+      "hp": 20
+    },
+    "vision": 14,
+    "cost": 50,
+    "buildTicks": 70,
+    "air": {
+      "ceiling": 1,
+      "needsAirbase": true,
+      "fuelTicks": 2400,
+      "isAWACS": false
+    },
+    "tags": [
+      "air",
+      "needsEye",
+      "strikeBackline"
+    ]
+  },
+  "drone": {
+    "id": "drone",
+    "name": "无人机",
+    "domain": "air",
+    "silhouette": "drone",
+    "move": {
+      "speed": 0.18,
+      "turnRateDeg": 12,
+      "terrainSlow": {},
+      "canEnterForest": false,
+      "canCrossBridgeOnly": false
+    },
+    "attack": {
+      "kind": "direct",
+      "damage": 3,
+      "range": 4,
+      "minRange": 0,
+      "reloadTicks": 15,
+      "splash": 0,
+      "canHitAir": false,
+      "canHitGround": true,
+      "armorMult": {
+        "front": 0.8,
+        "flank": 0.8,
+        "rear": 0.8
+      },
+      "accuracy": 0.5,
+      "requiresLineOfSight": false
+    },
+    "armor": {
+      "front": 2,
+      "flank": 2,
+      "rear": 2,
+      "hp": 8
+    },
+    "vision": 6,
+    "cost": 8,
+    "buildTicks": 16,
+    "air": {
+      "ceiling": 0.2,
+      "needsAirbase": false,
+      "fuelTicks": 600,
+      "isAWACS": false
+    },
+    "tags": [
+      "air",
+      "cheap",
+      "scout",
+      "shootableByInfantry"
+    ]
+  },
+  "aaVehicle": {
+    "id": "aaVehicle",
+    "name": "防空导弹车",
+    "domain": "ground",
+    "silhouette": "aaVehicle",
+    "move": {
+      "speed": 0.07,
+      "turnRateDeg": 4,
+      "terrainSlow": {
+        "forest": 0.4,
+        "hill": 0.7,
+        "river": 0.2
+      },
+      "canEnterForest": false,
+      "canCrossBridgeOnly": true
+    },
+    "attack": {
+      "kind": "aa",
+      "damage": 22,
+      "range": 16,
+      "minRange": 3,
+      "reloadTicks": 40,
+      "splash": 0,
+      "canHitAir": true,
+      "canHitGround": false,
+      "armorMult": {
+        "front": 1.0,
+        "flank": 1.0,
+        "rear": 1.0
+      },
+      "accuracy": 0.75,
+      "requiresLineOfSight": false
+    },
+    "armor": {
+      "front": 7,
+      "flank": 7,
+      "rear": 7,
+      "hp": 30
+    },
+    "vision": 8,
+    "cost": 36,
+    "buildTicks": 55,
+    "tags": [
+      "aa",
+      "needsLock"
+    ]
+  },
+  "awacs": {
+    "id": "awacs",
+    "name": "预警机",
+    "domain": "air",
+    "silhouette": "awacs",
+    "move": {
+      "speed": 0.08,
+      "turnRateDeg": 3,
+      "terrainSlow": {},
+      "canEnterForest": false,
+      "canCrossBridgeOnly": false
+    },
+    "attack": {
+      "kind": "none",
+      "damage": 0,
+      "range": 0,
+      "minRange": 0,
+      "reloadTicks": 0,
+      "splash": 0,
+      "canHitAir": false,
+      "canHitGround": false,
+      "armorMult": {
+        "front": 1.0,
+        "flank": 1.0,
+        "rear": 1.0
+      },
+      "accuracy": 0,
+      "requiresLineOfSight": false
+    },
+    "armor": {
+      "front": 3,
+      "flank": 3,
+      "rear": 3,
+      "hp": 60
+    },
+    "vision": 22,
+    "cost": 60,
+    "buildTicks": 80,
+    "air": {
+      "ceiling": 2,
+      "needsAirbase": true,
+      "fuelTicks": 3600,
+      "isAWACS": true
+    },
+    "tags": [
+      "air",
+      "eye"
+    ]
+  },
+  "engineer": {
+    "id": "engineer",
+    "name": "工兵",
+    "domain": "ground",
+    "silhouette": "engineer",
+    "move": {
+      "speed": 0.1,
+      "turnRateDeg": 8,
+      "terrainSlow": {
+        "forest": 0.8,
+        "hill": 0.9,
+        "river": 0.5
+      },
+      "canEnterForest": true,
+      "canCrossBridgeOnly": false
+    },
+    "attack": {
+      "kind": "none",
+      "damage": 0,
+      "range": 0,
+      "minRange": 0,
+      "reloadTicks": 0,
+      "splash": 0,
+      "canHitAir": false,
+      "canHitGround": false,
+      "armorMult": {
+        "front": 1.0,
+        "flank": 1.0,
+        "rear": 1.0
+      },
+      "accuracy": 0,
+      "requiresLineOfSight": false
+    },
+    "armor": {
+      "front": 4,
+      "flank": 4,
+      "rear": 4,
+      "hp": 22
+    },
+    "vision": 6,
+    "cost": 15,
+    "buildTicks": 26,
+    "tags": [
+      "engineer",
+      "buildFort"
+    ]
+  }
+}

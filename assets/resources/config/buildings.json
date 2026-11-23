@@ -1,0 +1,44 @@
+{
+  "commandCenter": {
+    "id": "commandCenter", "name": "指挥中心", "hp": 400, "cost": 0, "buildTicks": 1,
+    "produces": ["engineer"], "prodTicksPerUnit": 20,
+    "isCore": true, "tags": ["core", "vision"]
+  },
+  "barracks": {
+    "id": "barracks", "name": "兵营", "hp": 120, "cost": 25, "buildTicks": 40,
+    "produces": ["infantry", "exo", "roboDog"], "prodTicksPerUnit": 18,
+    "isCore": false, "tags": ["produce"]
+  },
+  "factory": {
+    "id": "factory", "name": "战车工厂", "hp": 150, "cost": 40, "buildTicks": 60,
+    "produces": ["tank", "assaultCar", "aaVehicle", "artillery"], "prodTicksPerUnit": 22,
+    "isCore": false, "tags": ["produce", "needsMine"]
+  },
+  "airport": {
+    "id": "airport", "name": "机场", "hp": 140, "cost": 55, "buildTicks": 70,
+    "produces": ["fighter", "awacs"], "prodTicksPerUnit": 24,
+    "isCore": false, "tags": ["produce", "air"]
+  },
+  "radar": {
+    "id": "radar", "name": "雷达站", "hp": 80, "cost": 30, "buildTicks": 50,
+    "produces": [], "prodTicksPerUnit": 0,
+    "isCore": false, "tags": ["vision", "lock"]
+  },
+  "mine": {
+    "id": "mine", "name": "矿场", "hp": 100, "cost": 35, "buildTicks": 50,
+    "produces": [], "prodTicksPerUnit": 0,
+    "isCore": false, "tags": ["economy"]
+  },
+  "turret": {
+    "id": "turret", "name": "防御炮塔", "hp": 90, "cost": 25, "buildTicks": 40,
+    "produces": [], "prodTicksPerUnit": 0,
+    "defense": { "range": 10, "minRange": 1.5, "reloadTicks": 40, "splash": 0, "canHitAir": true, "canHitGround": true, "arcDeg": 360, "damage": 12, "armorMult": { "front": 1.0, "flank": 1.0, "rear": 1.0 } },
+    "isCore": false, "tags": ["defense"]
+  },
+  "missileDefense": {
+    "id": "missileDefense", "name": "导弹防御", "hp": 70, "cost": 40, "buildTicks": 55,
+    "produces": [], "prodTicksPerUnit": 0,
+    "defense": { "range": 14, "minRange": 2, "reloadTicks": 45, "splash": 0, "canHitAir": true, "canHitGround": false, "arcDeg": 360, "damage": 30, "armorMult": { "front": 1.0, "flank": 1.0, "rear": 1.0 } },
+    "isCore": false, "tags": ["defense", "aa"]
+  }
+}

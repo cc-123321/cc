@@ -1,0 +1,10 @@
+[55396:56760:1123/065652.704:INFO:components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc:247] No machine level policy manager exists.
+[55396:56760:1123/065653.893:INFO:CONSOLE:50105] "Init Base: 10 ms", source: http://127.0.0.1:8899/cocos-js/_virtual_cc-0OximA6Z.js (50105)
+[55396:56760:1123/065653.922:INFO:CONSOLE:50145] "Init Infrastructure: 0 ms", source: http://127.0.0.1:8899/cocos-js/_virtual_cc-0OximA6Z.js (50145)
+[55396:56760:1123/065653.989:INFO:CONSOLE:1172] "[bullet]:bullet wasm lib loaded.", source: http://127.0.0.1:8899/cocos-js/_virtual_cc-0OximA6Z.js (1172)
+[55396:56760:1123/065653.989:INFO:CONSOLE:1172] "[PHYSICS2D]: register box2d.", source: http://127.0.0.1:8899/cocos-js/_virtual_cc-0OximA6Z.js (1172)
+[55396:56760:1123/065653.989:INFO:CONSOLE:1172] "[PHYSICS]: register bullet.", source: http://127.0.0.1:8899/cocos-js/_virtual_cc-0OximA6Z.js (1172)
+[55396:56760:1123/065654.048:INFO:CONSOLE:1172] "[PHYSICS]: using bullet.", source: http://127.0.0.1:8899/cocos-js/_virtual_cc-0OximA6Z.js (1172)
+[55396:56760:1123/065654.187:INFO:CONSOLE:50186] "Init SubSystem: 24016.59912109375 ms", source: http://127.0.0.1:8899/cocos-js/_virtual_cc-0OximA6Z.js (50186)
+[55396:56760:1123/065654.187:INFO:CONSOLE:1172] "Cocos Creator v3.8.8", source: http://127.0.0.1:8899/cocos-js/_virtual_cc-0OximA6Z.js (1172)
+[55396:56760:1123/065654.240:INFO:CONSOLE:1172] "Using custom pipeline: Builtin", source: http://127.0.0.1:8899/cocos-js/_virtual_cc-0OximA6Z.js (1172)

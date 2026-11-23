@@ -1,0 +1,9 @@
+{
+  "name": "storm-action",
+  "uuid": "b8e5d1c2-9f3a-4b7e-8c6d-5f4a3e2b1c0d",
+  "version": "0.1.0",
+  "creator": {
+    "version": "3.8.8"
+  },
+  "description": "风暴行动：三方实时战线策略战争小游戏（抖音/微信小游戏，广告变现）"
+}

@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2019",
+    "strict": false,
+    "outDir": "out",
+    "rootDir": "../..",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": false,
+    "lib": [
+      "es2020"
+    ]
+  },
+  "include": [
+    "../../assets/scripts/sim/**/*.ts",
+    "../../assets/scripts/core/**/*.ts",
+    "../../assets/scripts/data/ConfigTypes.ts",
+    "../../assets/scripts/economy/**/*.ts",
+    "../../assets/scripts/ai/**/*.ts",
+    "../../assets/scripts/game/MatchSetup.ts",
+    "run.ts",
+    "stub.d.ts",
+    "dbg.ts",
+    "dbg2.ts"
+  ]
+}
